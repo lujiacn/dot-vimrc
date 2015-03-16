@@ -41,7 +41,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 " IDE features
 "--------------
 Bundle 'scrooloose/nerdtree'
-Bundle 'humiaozuzu/TabBar'
+"Bundle 'humiaozuzu/TabBar'
 Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
@@ -60,7 +60,7 @@ Bundle 'nvie/vim-togglemouse'
 " Syntax/Indent for language enhancement
 "----------------------------------------
 "------- web backend ---------
-Bundle '2072/PHP-Indenting-for-VIm'
+" Bundle '2072/PHP-Indenting-for-VIm'
 "Bundle 'tpope/vim-rails'
 Bundle 'lepture/vim-jinja'
 "Bundle 'digitaltoad/vim-jade'
@@ -101,7 +101,15 @@ Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'Lokaltog/vim-distinguished'
 "Bundle 'chriskempson/vim-tomorrow-theme'
 "Bundle 'fisadev/fisa-vim-colorscheme'
-Bundle 'flazz/vim-colorschemes'
+"
+"--------------
+" User Added
+"--------------
 
+Bundle 'flazz/vim-colorschemes'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on     " required!
+

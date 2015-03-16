@@ -99,13 +99,13 @@ let g:rbpt_max = 16
 autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 
 " tabbar
-let g:Tb_MaxSize = 2
-let g:Tb_TabWrap = 1
-
-hi Tb_Normal guifg=white ctermfg=white
-hi Tb_Changed guifg=green ctermfg=green
-hi Tb_VisibleNormal ctermbg=252 ctermfg=235
-hi Tb_VisibleChanged guifg=green ctermbg=252 ctermfg=white
+"let g:Tb_MaxSize = 2
+"let g:Tb_TabWrap = 1
+"
+"hi Tb_Normal guifg=white ctermfg=white
+"hi Tb_Changed guifg=green ctermfg=green
+"hi Tb_VisibleNormal ctermbg=252 ctermfg=235
+"hi Tb_VisibleChanged guifg=green ctermbg=252 ctermfg=white
 
 " easy-motion
 let g:EasyMotion_leader_key = '<Leader>'
@@ -267,3 +267,28 @@ if has("gui_running")
     map <D-9> 9gt
     map <D-0> :tablast<CR>
 endif
+
+"" tab navigation like firefox
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
+"for go
+let g:go_fmt_command = "GoImports"
+
+
+"for gitbranch display in status line
+function! GitBranch()
+  let branch = system("git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'")
+  if branch != ''
+    return '   Git Branch: ' . substitute(branch, '\n', '', 'g')
+  en  
+  return ''
+endfunction
+ 
+" minimal status line, only shows git branch
+set statusline=%{GitBranch()}
+let g:airline_powerline_fonts = 0

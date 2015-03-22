@@ -1,6 +1,7 @@
 source ~/.vim/bundles.vim
 
 " encoding dectection
+set encoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
 " enable filetype dectection and ft specific plugin/indent
@@ -277,7 +278,7 @@ inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
 "for go
-let g:go_fmt_command = "GoImports"
+" let g:go_fmt_command = "GoImports"
 
 
 "for gitbranch display in status line
@@ -285,10 +286,38 @@ function! GitBranch()
   let branch = system("git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'")
   if branch != ''
     return '   Git Branch: ' . substitute(branch, '\n', '', 'g')
-  en  
+  en
   return ''
 endfunction
- 
+
 " minimal status line, only shows git branch
 set statusline=%{GitBranch()}
-let g:airline_powerline_fonts = 0
+
+"airline
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+" unicode symbols
+if isdirectory(expand("~/.vim/bundle/vim-airline/"))
+    if !exists('g:airline_theme')
+        let g:airline_theme = 'dark'
+    endif
+    if !exists('g:airline_powerline_fonts')
+        let g:airline_left_sep = "⮀"
+        let g:airline_right_sep = '⮂'
+        let g:airline_symbols.linenr = '¶'
+        let g:airline_symbols.branch = "⭠"
+        let g:airline_symbols.paste = 'p'
+        let g:airline_symbols.whitespace = '='
+    endif
+endif
+" let g:airline_left_sep = ''
+" let g:airline_right_sep = '⮂'
+" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.branch = 'B'
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.whitespace = 'Ξ'
+
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+

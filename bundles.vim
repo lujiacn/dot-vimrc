@@ -110,6 +110,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'bling/vim-airline'
+Bundle 'nsf/gocode', {'rtp': 'vim/'}
 
 filetype plugin indent on     " required!
 

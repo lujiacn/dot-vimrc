@@ -19,13 +19,14 @@ set background=dark
 color desert256
 
 " highlight current line
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
+" au WinLeave * set nocursorline nocursorcolumn
+" au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
 
 " search
+set hlsearch
 set incsearch
-"set highlight 	" conflict with highlight current line
+" set highlight 	" conflict with highlight current line
 set ignorecase
 set smartcase
 
@@ -190,7 +191,7 @@ let g:neocomplcache_omni_patterns.erlang = '[a-zA-Z]\|:'
 
 " SuperTab
 " let g:SuperTabDefultCompletionType='context'
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
 let g:SuperTabRetainCompletionType=2
 
 " ctrlp
@@ -321,3 +322,5 @@ endif
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
+"for autocomplete with tab
+:imap <tab> <c-x><c-o>

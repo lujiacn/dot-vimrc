@@ -1,0 +1,1 @@
+/usr/share/vim/addons/ftplugin/rnoweb_rplugin.vim

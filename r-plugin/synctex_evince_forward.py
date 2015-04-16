@@ -1,0 +1,1 @@
+/usr/share/vim/addons/r-plugin/synctex_evince_forward.py

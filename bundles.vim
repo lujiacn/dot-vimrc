@@ -111,6 +111,8 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'bling/vim-airline'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
+Bundle 'jalvesaq/R-Vim-runtime'
+Bundle 'vim-scripts/Vim-R-plugin'
 
 filetype plugin indent on     " required!
 

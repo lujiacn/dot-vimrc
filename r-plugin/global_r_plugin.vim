@@ -1,0 +1,1 @@
+/usr/share/vim/addons/r-plugin/global_r_plugin.vim

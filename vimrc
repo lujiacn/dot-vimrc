@@ -16,7 +16,7 @@ syntax on
 " color scheme
 set background=dark
 "color solarized
-color desert256
+color desert256v2
 
 " highlight current line
 " au WinLeave * set nocursorline nocursorcolumn
@@ -304,10 +304,10 @@ if isdirectory(expand("~/.vim/bundle/vim-airline/"))
         let g:airline_theme = 'dark'
     endif
     if !exists('g:airline_powerline_fonts')
-        let g:airline_left_sep = "⮀"
-        let g:airline_right_sep = '⮂'
+        let g:airline_left_sep = ">>"
+        let g:airline_right_sep = "<<" 
         let g:airline_symbols.linenr = '¶'
-        let g:airline_symbols.branch = "⭠"
+        let g:airline_symbols.branch = "B"
         let g:airline_symbols.paste = 'p'
         let g:airline_symbols.whitespace = '='
     endif

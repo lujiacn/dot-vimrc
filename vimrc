@@ -16,7 +16,7 @@ syntax on
 " color scheme
 set background=dark
 "color solarized
-color desert256v2
+color desert-warm-256
 
 " highlight current line
 " au WinLeave * set nocursorline nocursorcolumn
@@ -324,5 +324,4 @@ let g:airline#extensions#tabline#enabled = 1
 
 "for autocomplete with tab
 :imap <tab> <c-x><c-o>
-
 

@@ -113,6 +113,6 @@ Bundle 'bling/vim-airline'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'jalvesaq/R-Vim-runtime'
 Bundle 'vim-scripts/Vim-R-plugin'
-
+Bundle 'rainux/vim-desert-warm-256'
 filetype plugin indent on     " required!
 

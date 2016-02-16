@@ -299,25 +299,25 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 " unicode symbols
-if isdirectory(expand("~/.vim/bundle/vim-airline/"))
-    if !exists('g:airline_theme')
-        let g:airline_theme = 'dark'
-    endif
-    if !exists('g:airline_powerline_fonts')
-        let g:airline_left_sep = ">>"
-        let g:airline_right_sep = "<<" 
-        let g:airline_symbols.linenr = '¶'
-        let g:airline_symbols.branch = "B"
-        let g:airline_symbols.paste = 'p'
-        let g:airline_symbols.whitespace = '='
-    endif
-endif
-" let g:airline_left_sep = ''
-" let g:airline_right_sep = '⮂'
-" let g:airline_symbols.linenr = '¶'
-" let g:airline_symbols.branch = 'B'
-" let g:airline_symbols.paste = 'ρ'
-" let g:airline_symbols.whitespace = 'Ξ'
+" if isdirectory(expand("~/.vim/bundle/vim-airline/"))
+    " if !exists('g:airline_theme')
+        " let g:airline_theme = 'dark'
+    " endif
+    " if !exists('g:airline_powerline_fonts')
+        " let g:airline_left_sep = ">>"
+        " let g:airline_right_sep = "<<" 
+        " let g:airline_symbols.linenr = '¶'
+        " let g:airline_symbols.branch = "B"
+        " let g:airline_symbols.paste = 'p'
+        " let g:airline_symbols.whitespace = '='
+    " endif
+" endif
+let g:airline_left_sep = '⮀'
+let g:airline_right_sep = '⮂'
+let g:airline_symbols.linenr = "⭡"
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.paste = 'p'
+let g:airline_symbols.whitespace = 'Ξ'
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1

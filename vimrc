@@ -16,7 +16,7 @@ syntax on
 " color scheme
 set background=dark
 "color solarized
-color desert-warm-256
+color desert256 
 
 " highlight current line
 " au WinLeave * set nocursorline nocursorcolumn

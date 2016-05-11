@@ -70,7 +70,7 @@ setlocal foldexpr=0
 setlocal foldignore=#
 setlocal foldlevel=0
 setlocal foldmarker={{{,}}}
-setlocal foldmethod=syntax
+setlocal foldmethod=manual
 setlocal foldminlines=1
 setlocal foldnestmax=1
 setlocal foldtext=foldtext()
@@ -131,13 +131,20 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 332 - ((11 * winheight(0) + 22) / 45)
+silent! normal! zE
+11,18fold
+20,29fold
+44,52fold
+55,62fold
+65,94fold
+97,113fold
+let s:l = 28 - ((27 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-332
-normal! 062|
-lcd ~/workspace/web_projects/go/src/repal
+28
+normal! 017|
+lcd ~/workspace/web_projects/go/src/repal/app/lib/portal
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

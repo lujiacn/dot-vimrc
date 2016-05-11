@@ -70,7 +70,7 @@ setlocal foldexpr=0
 setlocal foldignore=#
 setlocal foldlevel=0
 setlocal foldmarker={{{,}}}
-setlocal foldmethod=syntax
+setlocal foldmethod=manual
 setlocal foldminlines=1
 setlocal foldnestmax=1
 setlocal foldtext=foldtext()
@@ -115,7 +115,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%!Pl#Statusline(0,1)
+setlocal statusline=%!airline#statusline(1)
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -131,12 +131,29 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 332 - ((11 * winheight(0) + 22) / 45)
+silent! normal! zE
+27,66fold
+68,94fold
+97,113fold
+116,124fold
+127,151fold
+154,164fold
+167,174fold
+177,187fold
+190,196fold
+198,218fold
+220,246fold
+248,265fold
+268,306fold
+308,327fold
+329,341fold
+343,367fold
+let s:l = 119 - ((28 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-332
-normal! 062|
+119
+normal! 028|
 lcd ~/workspace/web_projects/go/src/repal
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

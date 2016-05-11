@@ -1,7 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.config/nvim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -114,5 +114,6 @@ Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'jalvesaq/R-Vim-runtime'
 Bundle 'vim-scripts/Vim-R-plugin'
 Bundle 'rainux/vim-desert-warm-256'
+Bundle 'jiangmiao/auto-pairs'
 filetype plugin indent on     " required!
 

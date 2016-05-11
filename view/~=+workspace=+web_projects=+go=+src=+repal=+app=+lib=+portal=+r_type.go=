@@ -3,11 +3,7 @@ argglobal
 let s:cpo_save=&cpo
 set cpo&vim
 imap <buffer> <S-BS> <Plug>delimitMateS-BS
-inoremap <buffer> <silent> <BS> =AutoPairsDelete()
-inoremap <buffer> <silent> î :call AutoPairsJump()a
-inoremap <buffer> <silent> <expr> ð AutoPairsToggle()
-inoremap <buffer> <silent> â =AutoPairsBackInsert()
-inoremap <buffer> <silent> å =AutoPairsFastWrap()
+imap <buffer> <BS> <Plug>delimitMateBS
 nnoremap <buffer> <silent> K :GoDoc
 xnoremap <buffer> af :call go#textobj#Function('a')
 onoremap <buffer> af :call go#textobj#Function('a')
@@ -15,21 +11,18 @@ nnoremap <buffer> <silent> gd :GoDef
 xnoremap <buffer> if :call go#textobj#Function('i')
 onoremap <buffer> if :call go#textobj#Function('i')
 imap <buffer> <silent> g <Plug>delimitMateJumpMany
-inoremap <buffer> <silent>  =AutoPairsDelete()
-inoremap <buffer> <silent>   =AutoPairsSpace()
-inoremap <buffer> <silent> " =AutoPairsInsert('"')
-inoremap <buffer> <silent> ' =AutoPairsInsert('''')
-inoremap <buffer> <silent> ( =AutoPairsInsert('(')
-inoremap <buffer> <silent> ) =AutoPairsInsert(')')
+imap <buffer>  <Plug>delimitMateBS
+imap <buffer> " <Plug>delimitMate"
+imap <buffer> ' <Plug>delimitMate'
+imap <buffer> ( <Plug>delimitMate(
+imap <buffer> ) <Plug>delimitMate)
 imap <buffer> < <Plug>delimitMate<
 imap <buffer> > <Plug>delimitMate>
-noremap <buffer> <silent> î :call AutoPairsJump()
-noremap <buffer> <silent> ð :call AutoPairsToggle()
-inoremap <buffer> <silent> [ =AutoPairsInsert('[')
-inoremap <buffer> <silent> ] =AutoPairsInsert(']')
-inoremap <buffer> <silent> ` =AutoPairsInsert('`')
-inoremap <buffer> <silent> { =AutoPairsInsert('{')
-inoremap <buffer> <silent> } =AutoPairsInsert('}')
+imap <buffer> [ <Plug>delimitMate[
+imap <buffer> ] <Plug>delimitMate]
+imap <buffer> ` <Plug>delimitMate`
+imap <buffer> { <Plug>delimitMate{
+imap <buffer> } <Plug>delimitMate}
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal keymap=
@@ -131,12 +124,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 332 - ((11 * winheight(0) + 22) / 45)
+let s:l = 36 - ((34 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-332
-normal! 062|
+36
+normal! 037|
 lcd ~/workspace/web_projects/go/src/repal
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

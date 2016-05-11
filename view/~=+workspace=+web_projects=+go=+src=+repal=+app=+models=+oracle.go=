@@ -70,7 +70,7 @@ setlocal foldexpr=0
 setlocal foldignore=#
 setlocal foldlevel=0
 setlocal foldmarker={{{,}}}
-setlocal foldmethod=syntax
+setlocal foldmethod=manual
 setlocal foldminlines=1
 setlocal foldnestmax=1
 setlocal foldtext=foldtext()
@@ -115,7 +115,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%!Pl#Statusline(0,1)
+setlocal statusline=%!airline#statusline(1)
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -131,13 +131,22 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 332 - ((11 * winheight(0) + 22) / 45)
+silent! normal! zE
+11,16fold
+18,27fold
+30,39fold
+42,49fold
+52,81fold
+84,100fold
+103,107fold
+111,129fold
+let s:l = 123 - ((22 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-332
-normal! 062|
-lcd ~/workspace/web_projects/go/src/repal
+123
+normal! 018|
+lcd ~/workspace/web_projects/go/src/repal/app/models
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

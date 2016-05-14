@@ -20,7 +20,7 @@ The begning of bundles.vim should looks like below:
 
 ###set nvim alias
 
-    echo export alais='vim' >> ~/.basrc
+    echo alias vim='nvim' >> ~/.basrc
 
 ###Update plugins
 start vim

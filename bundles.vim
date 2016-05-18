@@ -11,7 +11,7 @@ Bundle 'VundleVim/Vundle.vim'
 "------------------
 " Code Completions
 "------------------
-Bundle 'Shougo/neocomplcache'
+" Bundle 'Shougo/neocomplcache'
 Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
@@ -115,5 +115,7 @@ Bundle 'jalvesaq/R-Vim-runtime'
 Bundle 'vim-scripts/Vim-R-plugin'
 Bundle 'rainux/vim-desert-warm-256'
 Bundle 'jiangmiao/auto-pairs'
+" Bundle 'Shougo/deoplete.nvim'
+Bundle 'Valloric/YouCompleteMe'
 filetype plugin indent on     " required!
 

@@ -26,3 +26,8 @@ The begning of bundles.vim should looks like below:
 start vim
 
     :BundleInstall
+
+###After install Youcompleteme
+when stat nvim there is a error message mentioned vim not compiled with python ...
+
+    pip install neovim

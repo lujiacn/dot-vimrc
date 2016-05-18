@@ -31,3 +31,5 @@ start vim
 when stat nvim there is a error message mentioned vim not compiled with python ...
 
     pip install neovim
+
+

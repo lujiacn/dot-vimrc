@@ -1,8 +1,11 @@
 source ~/.config/nvim/bundles.vim
 
+set clipboard=unnamed
+
 " encoding dectection
 set encoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+set langmenu=en_US
 
 " enable filetype dectection and ft specific plugin/indent
 filetype plugin indent on
@@ -153,6 +156,8 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 " let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeWinPos = "right"
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
 
 " nerdcommenter
 let NERDSpaceDelims=1
@@ -162,40 +167,6 @@ let NERDCompactSexyComs=1
 " ZenCoding
 let g:user_emmet_expandabbr_key='<C-j>'
 
-" powerline
-"let g:Powerline_symbols = 'fancy'
-
-" NeoComplCache
-" let g:neocomplcache_enable_at_startup=1
-" let g:neoComplcache_disableautocomplete=1
-" "let g:neocomplcache_enable_underbar_completion = 1
-" "let g:neocomplcache_enable_camel_case_completion = 1
-" let g:neocomplcache_enable_smart_case=1
-" let g:neocomplcache_min_syntax_length = 3
-" let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-" set completeopt-=preview
-
-" imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-" smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-" imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
-" smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
-
-" Enable omni completion.
-" autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-" autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-" autocmd FileType c setlocal omnifunc=ccomplete#Complete
-" if !exists('g:neocomplcache_omni_patterns')
-  " let g:neocomplcache_omni_patterns = {}
-" endif
-" let g:neocomplcache_omni_patterns.erlang = '[a-zA-Z]\|:'
-
-" SuperTab
-" let g:SuperTabDefultCompletionType='context'
-" let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
-" let g:SuperTabRetainCompletionType=2
-
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
@@ -204,8 +175,13 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 nmap <F5> :TagbarToggle<cr>
+nmap <leader>tb :TagbarToggle<cr>
+
 nmap <F6> :NERDTreeToggle<cr>
+nmap <leader>ne :NERDTreeToggle<cr>
+
 nmap <F3> :GundoToggle<cr>
+
 nmap <F4> :IndentGuidesToggle<cr>
 nmap  <D-/> :
 nnoremap <leader>a :Ack
@@ -314,22 +290,28 @@ endif
         " let g:airline_symbols.whitespace = '='
     " endif
 " endif
-let g:airline_left_sep = '⮀'
-let g:airline_right_sep = '⮂'
-let g:airline_symbols.linenr = "⭡"
-let g:airline_symbols.branch = '⭠'
+let g:airline_left_sep = '>'
+let g:airline_right_sep = '<'
+let g:airline_symbols.linenr = "Ln"
+let g:airline_symbols.branch = 'B'
 let g:airline_symbols.paste = 'p'
-let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.whitespace = ' '
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 "for autocomplete with tab
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#enable_smart_case = 1
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
 " let g:deoplete#disable_auto_complete = 1
-" " :imap <tab> <c-x><c-o>
-" :inoremap <expr> <Tab>  pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
-" :inoremap <expr> <S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
+:imap <tab> <c-x><c-o>
+:inoremap <expr> <Tab>  pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
+:inoremap <expr> <S-Tab>  pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 :imap jj <Esc>
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)

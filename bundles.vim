@@ -111,11 +111,15 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'bling/vim-airline'
 Bundle 'nsf/gocode', {'rtp': 'vim/'}
-Bundle 'jalvesaq/R-Vim-runtime'
-Bundle 'vim-scripts/Vim-R-plugin'
+" Bundle 'jalvesaq/R-Vim-runtime'
+" Bundle 'vim-scripts/Vim-R-plugin'
 Bundle 'rainux/vim-desert-warm-256'
 Bundle 'jiangmiao/auto-pairs'
-" Bundle 'Shougo/deoplete.nvim'
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'Shougo/deoplete.nvim'
+Bundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
+Bundle 'jalvesaq/Nvim-R'
+Bundle "junegunn/vim-easy-align"
+Bundle 'mattn/vim-sqlfmt'
+" Bundle 'Valloric/YouCompleteMe'
 filetype plugin indent on     " required!
 

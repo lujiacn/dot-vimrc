@@ -1,5 +1,6 @@
 source ~/.config/nvim/bundles.vim
 
+let mapleader=","
 set clipboard=unnamed
 
 " encoding dectection

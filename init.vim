@@ -316,3 +316,12 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+let g:go_fmt_command = "goimports"
+
+"license setting
+let g:licenses_copyright_holders_name = 'Jia Lu <lujiacn@gmail.com>'
+"let g:licenses_authors_name = 'Jia Lu <lujiacn@gmail.com>'
+let g:licenses_default_commands = ['gpl', 'mit', 'foobar']
+
+

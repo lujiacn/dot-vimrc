@@ -301,9 +301,6 @@ let g:airline_symbols.whitespace = ' '
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-"for autocomplete with tab
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
 " let g:deoplete#disable_auto_complete = 1
 :imap <tab> <c-x><c-o>
 :inoremap <expr> <Tab>  pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
@@ -317,11 +314,37 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-let g:go_fmt_command = "goimports"
 
 "license setting
 let g:licenses_copyright_holders_name = 'Jia Lu <lujiacn@gmail.com>'
 "let g:licenses_authors_name = 'Jia Lu <lujiacn@gmail.com>'
 let g:licenses_default_commands = ['gpl', 'mit', 'foobar']
 
+"surround for md
+nmap <silent> <leader>sb ysiw*gvS*
 
+
+" neocomplete like
+set completeopt+=noinsert
+" deoplete.nvim recommend
+set completeopt+=noselect
+
+" Path to python interpreter for neovim
+" let g:python3_host_prog  = '/path/to/python3'
+" Skip the check of neovim module
+" let g:python3_host_skip_check = 1
+
+" Run deoplete.nvim automatically
+let g:deoplete#enable_at_startup = 1
+" deoplete-go settings
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+" let g:deoplete#sources#go#use_cache = 1
+
+"golang
+let g:syntastic_go_checkers = ['govet', 'errcheck', 'go']
+" let g:go_fmt_command = "gofmt"
+let g:go_fmt_command = "goimports"
+
+"xml format
+au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null

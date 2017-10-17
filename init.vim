@@ -20,7 +20,7 @@ syntax on
 " color scheme
 set background=dark
 "color solarized
-color desert256
+color desertEx
 
 " highlight current line
 " au WinLeave * set nocursorline nocursorcolumn
@@ -291,12 +291,15 @@ endif
         " let g:airline_symbols.whitespace = '='
     " endif
 " endif
-let g:airline_left_sep = '>'
-let g:airline_right_sep = '<'
-let g:airline_symbols.linenr = "Ln"
-let g:airline_symbols.branch = 'B'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.branch = ''
 let g:airline_symbols.paste = 'p'
 let g:airline_symbols.whitespace = ' '
+let g:airline_symbols.readonly = ''
+
+
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -348,3 +351,5 @@ let g:go_fmt_command = "goimports"
 
 "xml format
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+
+let xml_syntax_folding=1      " XML

@@ -125,6 +125,7 @@ Bundle 'antoyo/vim-licenses'
 Bundle 'dkprice/vim-easygrep'
 Bundle 'rizzatti/dash.vim'
 Bundle 'tpope/vim-repeat'
+Bundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Bundle 'Valloric/YouCompleteMe'
 " Bundle 'changa/desert256.vim'
 " Bundle 'noah/vim256-color'

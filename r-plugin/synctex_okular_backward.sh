@@ -1,1 +1,0 @@
-/usr/share/vim/addons/r-plugin/synctex_okular_backward.sh

@@ -1,1 +1,0 @@
-/usr/share/vim/addons/ftplugin/r_rplugin.vim

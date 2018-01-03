@@ -1,1 +1,0 @@
-/usr/share/vim/addons/r-plugin/gui_running.vim

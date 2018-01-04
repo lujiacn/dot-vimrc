@@ -1,4 +1,4 @@
-Edit from Maple's Vim config
+Updated
 ==================
 
 Installation for neovim

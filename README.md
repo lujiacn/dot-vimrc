@@ -5,26 +5,20 @@ Installation for neovim
 
 ###Notice
 neovim config directory is ~/.config/nvim/, with config file init.vim (instead of vimrc for vim)
-###Install vundle 
-    $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
+###Install vim-Plug
+    download from https://github.com/junegunn/vim-plug, put in .config/nvim/autoload/
 
-###Config bundles.vim
-The begning of bundles.vim should looks like below:
-
-    set rtp+=~/.config/nvim/bundle/Vundle.vim
-    call vundle#rc("~/.config/nvim/bundle")
-
-
-    echo alias vim='nvim' >> ~/.basrc
+###Config plugs.vim
 
 ###Update plugins
 start vim
 
-    :BundleInstall
+    :PlugInstall
 
 ###After install Youcompleteme
 when stat nvim there is a error message mentioned vim not compiled with python ...
 
     pip install neovim
+    pip3 install neovim
 
 

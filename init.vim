@@ -3,7 +3,7 @@ filetype off     " required
 
 " vim-plug ...
 if filereadable(expand("~/.config/nvim/plugs.vim"))
- source ~/.config/nvim/plugs.vim
+    source ~/.config/nvim/plugs.vim
 endif
 
 set clipboard=unnamed
@@ -11,82 +11,52 @@ set clipboard=unnamed
 " Required:
 filetype plugin indent on
 
-
-"*****************************************************************************
+"  *****************************************************************************
 "" Basic Setup
-"*****************************************************************************"
-"" Encoding
+"  *****************************************************************************"
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 set bomb
 set binary
-
-"" Fix backspace indent
 set backspace=indent,eol,start
-
-"" Tabs. May be overridden by autocmd rules
-
-"" Map leader to ,
 let mapleader=','
-
-"" Enable hidden buffers
 set hidden
-
-"" Searching
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-
-"" cursor
 set cursorline cursorcolumn
-
-"" Directories for swp files
 set nobackup
 set noswapfile
-
 set fileformats=unix,dos,mac
-
-syntax on
-set ruler
-
-let no_buffers_menu=1
-colorscheme desertEx
-
 set t_Co=256
-set mouse=a                                                       " use mouse in all modes
-set report=0                                                      " always report number of lines changed                "
-set nowrap                                                        " dont wrap lines
-set scrolloff=5                                                   " 5 lines above/below cursor when scrolling
-set number                                                        " show line numbers
-set showmatch                                                     " show matching bracket (briefly jump)
-set showcmd                                                       " show typed command in status bar
-set title                                                         " show file in titlebar
-
-" Default Indentation
+set mouse=a     "  use mouse in all modes
+set report=0    "  always report number of lines changed                "
+set nowrap      "  dont wrap lines
+set scrolloff=5 "  5 lines above/below cursor when scrolling
+set number      "  show line numbers
+set showmatch   "  show matching bracket (briefly jump)
+set showcmd     "  show typed command in status bar
+set title       "  show file in titlebar
 set autoindent
-set smartindent     " indent when
+set smartindent "  indent when
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set scrolloff=3
-
-" indentLine
-let g:indentLine_enabled = 1
-let g:indentLine_concealcursor = 0
-let g:indentLine_char = '┆'
-let g:indentLine_faster = 1
-
-"" Status bar
+set ruler
 set laststatus=2
+let no_buffers_menu=1
+
+syntax on
+colorscheme desertEx
+
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
-" vim-airline
 
 "*****************************************************************************
 "" Abbreviations
@@ -107,11 +77,11 @@ cnoreabbrev Qall qall
 "" Functions
 "*****************************************************************************
 if !exists('*s:setupWrapping')
-  function s:setupWrapping()
-    set wrap
-    set wm=2
-    set textwidth=79
-  endfunction
+    function s:setupWrapping()
+        set wrap
+        set wm=2
+        set textwidth=79
+    endfunction
 endif
 
 "*****************************************************************************
@@ -119,31 +89,33 @@ endif
 "*****************************************************************************
 "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
-  autocmd!
-  autocmd BufEnter * :syntax sync maxlines=200
+    autocmd!
+    autocmd BufEnter * :syntax sync maxlines=200
 augroup END
 
 "" Remember cursor position
 augroup vimrc-remember-cursor-position
-  autocmd!
-  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+    autocmd!
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
 "" txt
 augroup vimrc-wrapping
-  autocmd!
-  autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
+    autocmd!
+    autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
 augroup END
 
 "" make/cmake
 augroup vimrc-make-cmake
-  autocmd!
-  autocmd FileType make setlocal noexpandtab
-  autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
+    autocmd!
+    autocmd FileType make setlocal noexpandtab
+    autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 augroup END
 
-set autoread
+"" xml
+au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
 
+set autoread
 
 "" NERDTree configuration
 let g:NERDTreeDirArrowExpandable = '▸'
@@ -170,7 +142,7 @@ let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
 
 if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+    let g:airline_symbols = {}
 endif
 
 let g:airline#extensions#tabline#left_sep = ''
@@ -203,25 +175,33 @@ nmap <F5> :TagbarToggle<cr>
 nmap <leader>tb :TagbarToggle<cr>
 
 " deoplete
-" neocomplete like
 set completeopt+=noinsert
-" deoplete.nvim recommend
 set completeopt+=noselect
 
-" Path to python interpreter for neovim
-"let g:python3_host_prog  = '/path/to/python3'
-" Skip the check of neovim module
+let g:python4_host_prog  = '/usr/local/bin/python3' " Path to python interpreter for neovim
 let g:python3_host_skip_check = 1
+let g:deoplete#enable_at_startup = 1                " Run deoplete.nvim automatically
 
-" Run deoplete.nvim automatically
-let g:deoplete#enable_at_startup = 1
 " deoplete-go settings
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-" use tab to forward cycle
+
+" use tab cycle and close doc when select
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" use tab to backward cycle
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-" Close the documentation window when completion is done
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
+" easy align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" indentLine
+let g:indentLine_enabled = 1
+let g:indentLine_concealcursor = 0
+let g:indentLine_char = '┆'
+let g:indentLine_faster = 1
+
+" go
+let g:go_fmt_command = "goimports"

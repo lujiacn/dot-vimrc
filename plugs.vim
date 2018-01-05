@@ -23,5 +23,7 @@ Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-go', {'do': 'make'}
+Plug 'davidhalter/jedi-vim'
+Plug 'mileszs/ack.vim'
 
 call plug#end()

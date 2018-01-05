@@ -3,19 +3,19 @@ Updated
 
 Installation for neovim
 
-###Notice
+### Notice
 neovim config directory is ~/.config/nvim/, with config file init.vim (instead of vimrc for vim)
-###Install vim-Plug
+### Install vim-Plug
     download from https://github.com/junegunn/vim-plug, put in .config/nvim/autoload/
 
-###Config plugs.vim
+### Config plugs.vim
 
-###Update plugins
+### Update plugins
 start vim
 
     :PlugInstall
 
-###After install Youcompleteme
+### After install Youcompleteme
 when stat nvim there is a error message mentioned vim not compiled with python ...
 
     pip install neovim

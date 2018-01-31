@@ -205,3 +205,7 @@ let g:indentLine_faster = 1
 
 " go
 let g:go_fmt_command = "goimports"
+
+" syntax toggle
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <C-w>E :SyntasticCheck<CR> 

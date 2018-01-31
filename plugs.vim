@@ -25,5 +25,6 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-go', {'do': 'make'}
 Plug 'davidhalter/jedi-vim'
 Plug 'mileszs/ack.vim'
+Plug 'sebdah/vim-delve'
 
 call plug#end()

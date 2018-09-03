@@ -3,28 +3,42 @@ call plug#begin('~/.config/nvim/plugged')
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
-Plug 'scrooloose/nerdtree'
-Plug 'mattn/emmet-vim'
-Plug 'scrooloose/syntastic'
-Plug 'Yggdroot/indentLine'
-Plug 'sheerun/vim-polyglot'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'honza/vim-snippets'
-Plug 'flazz/vim-colorschemes'
-Plug 'junegunn/vim-easy-align'
+"" Basic plugs "
+" Functionalities
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'} " go support
+Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
 Plug 'easymotion/vim-easymotion'
-Plug 'scrooloose/nerdcommenter'
-Plug 'majutsushi/tagbar'
-Plug 'kien/ctrlp.vim'
+"Plug 'ervandew/supertab'
+Plug 'metalelf0/supertab' "fork for 
+Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-go', {'do': 'make'}
-Plug 'davidhalter/jedi-vim'
+Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
 Plug 'mileszs/ack.vim'
-Plug 'sebdah/vim-delve'
-
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'Yggdroot/indentLine'
+"*************
+"" color themes
+"*************
+Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'toupeira/vim-desertink'
+Plug 'sts10/vim-pink-moon'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'nightsense/seabird'
+Plug 'rakr/vim-one'
+Plug 'chriskempson/base16-vim'
 call plug#end()
+
+"Plug 'daylerees/colour-schemes'
+"Plug 'gretzky/vim-snazzy'
+"Plug 'jpalardy/vim-slime'
+"Plug 'benmills/vimux'

@@ -36,6 +36,7 @@ Plug 'phanviet/vim-monokai-pro'
 Plug 'nightsense/seabird'
 Plug 'rakr/vim-one'
 Plug 'chriskempson/base16-vim'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 "Plug 'daylerees/colour-schemes'

@@ -1,5 +1,6 @@
 set nocompatible " be iMproved, required
-set termguicolors " for neovim
+"set termguicolors " for neovim
+set t_Co=256
 filetype off     " required
 
 syntax enable
@@ -33,10 +34,10 @@ set nobackup
 set noswapfile
 set fileformats=unix,dos,mac
 set mouse=a     "  use mouse in all modes
+set mousefocus
 set report=0    "  always report number of lines changed                "
 set nowrap      "  dont wrap lines
 set scrolloff=5 "  5 lines above/below cursor when scrolling
-set t_Co=256
 set number      "  show line numbers
 set showmatch   "  show matching bracket (briefly jump)
 set showcmd     "  show typed command in status bar
@@ -54,6 +55,10 @@ let no_buffers_menu=1
 syntax on
 colorscheme desertEx
 "colorscheme base16-onedark
+set background=dark
+"colorscheme base16-tomorrow-night
+
+
 
 set nocursorline   
 set nocursorcolumn 
@@ -373,6 +378,8 @@ let g:go_list_type = "quickfix"
 
 " Add the failing test name to the output of :GoTest
 let g:go_test_show_name = 1
+
+let g:go_echo_commands_disabled = ['godef']
 
 " gometalinter configuration
 let g:go_metalinter_command = ""

@@ -26,7 +26,7 @@ set backspace=indent,eol,start
 let mapleader=','
 set hidden
 set hlsearch
-set incsearch
+"set incsearch
 set ignorecase
 set smartcase
 set cursorline cursorcolumn

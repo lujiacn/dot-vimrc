@@ -23,6 +23,11 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'Yggdroot/indentLine'
+Plug 'ternjs/tern_for_vim'
+Plug 'rust-lang/rust.vim'
+Plug 'Quramy/vim-js-pretty-template'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 "*************
 "" color themes
 "*************

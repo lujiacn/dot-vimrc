@@ -154,9 +154,9 @@ set completeopt-=preview
 
 " Supertab
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+"let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
@@ -178,6 +178,7 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
+
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -257,12 +258,13 @@ let g:python_host_prog  = '/Users/i0040679/.pyenv/versions/neovim3/bin/python' "
 let g:python3_host_skip_check = 1
 let g:deoplete#enable_at_startup = 1                " Run deoplete.nvim automatically
 
-"set completeopt+=noinsert
-"set completeopt+=noselect
+set completeopt+=noinsert
+set completeopt+=noselect
 
 " deoplete-go settings
-"let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-"let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#go#unimported_packages = 1	
 
 " use tab cycle and close doc when select
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -395,5 +397,4 @@ let g:go_metalinter_enabled = [
     \ 'vet',
     \ 'vetshadow'
 \]
-
 

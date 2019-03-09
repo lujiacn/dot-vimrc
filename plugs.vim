@@ -6,7 +6,9 @@ call plug#begin('~/.config/nvim/plugged')
 "" Basic plugs "
 " Functionalities
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'} " go support
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'SirVer/ultisnips'
 Plug 'easymotion/vim-easymotion'
 "Plug 'ervandew/supertab'

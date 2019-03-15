@@ -1,6 +1,6 @@
-set nocompatible " be iMproved, required
+"set nocompatible " not for nvim scince nvim always set nocompatible
 "set termguicolors " for neovim
-set t_Co=256
+"set t_Co=256
 filetype off     " required
 
 syntax enable
@@ -17,9 +17,10 @@ filetype plugin indent on
 "  *****************************************************************************
 "" Basic Setup
 "  *****************************************************************************"
-set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=utf-8
+" nvim is utf-8
+"set encoding=utf-8
+"set fileencoding=utf-8
+"set fileencodings=utf-8
 set bomb
 set binary
 set backspace=indent,eol,start
@@ -55,14 +56,14 @@ let no_buffers_menu=1
 syntax on
 colorscheme desertEx
 "colorscheme base16-onedark
-set background=dark
+"set background=dark
 "colorscheme base16-tomorrow-night
 
 
 
-set nocursorline   
+set nocursorline  
 set nocursorcolumn 
-hi CursorLineNR ctermbg=gray  guibg=gray   
+"hi CursorLineNR ctermbg=gray  guibg=gray   
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
@@ -195,16 +196,19 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 "" NERDTree configuration
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+"let g:NERDTreeDirArrowExpandable = '▸'
+"let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeChDirMode=2
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
-let g:NERDTreeWinSize = 50
+let g:NERDTreeWinSize = 30
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
@@ -213,7 +217,8 @@ nnoremap <silent> <leader>ne :NERDTreeToggle<CR>
 
 "vim-airline
 "let g:airline_theme = 'desertink'
-let g:airline_theme = 'papercolor'
+"let g:airline_theme = 'papercolor'
+let g:airline_theme = 'bubblegum'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -398,3 +403,9 @@ let g:go_metalinter_enabled = [
     \ 'vetshadow'
 \]
 
+" vim-javascript
+let g:javascript_plugin_jsdoc = 1
+
+" user defined 
+nnoremap zz <esc>:wq<cr>
+:imap jj <esc>

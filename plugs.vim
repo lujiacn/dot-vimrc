@@ -15,7 +15,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'metalelf0/supertab' "fork for 
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -30,6 +30,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'sheerun/vim-polyglot'
+Plug 'pangloss/vim-javascript'
 "*************
 "" color themes
 "*************
@@ -44,6 +46,13 @@ Plug 'nightsense/seabird'
 Plug 'rakr/vim-one'
 Plug 'chriskempson/base16-vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'aradunovic/perun.vim'
+Plug 'tomasr/molokai'
+Plug 'raphamorim/lucario'
+Plug 'rafi/awesome-vim-colorschemes'
+
+" last one
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 "Plug 'daylerees/colour-schemes'

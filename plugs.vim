@@ -5,8 +5,8 @@ call plug#begin('~/.config/nvim/plugged')
 "*****************************************************************************
 "" Basic plugs "
 " Functionalities
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'} " go support
 "Plug 'Valloric/YouCompleteMe'
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'} " go support
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'SirVer/ultisnips'
@@ -32,6 +32,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
+Plug 'Shougo/denite.nvim'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 "*************
 "" color themes
 "*************

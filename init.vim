@@ -198,12 +198,12 @@ let g:fzf_colors =
 "" NERDTree configuration
 "let g:NERDTreeDirArrowExpandable = '▸'
 "let g:NERDTreeDirArrowCollapsible = '▾'
-let g:NERDTreeChDirMode=2
-let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
-let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
-let g:NERDTreeShowBookmarks=1
-let g:nerdtree_tabs_focus_on_files=1
-let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+let g:NERDTreeChDirMode = 2
+let g:NERDTreeIgnore = ['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
+let g:NERDTreeSortOrder = ['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+let g:NERDTreeShowBookmarks = 1
+let g:nerdtree_tabs_focus_on_files = 1
+let g:NERDTreeMapOpenInTabSilent = '<RightMcuse>'
 let g:NERDTreeWinSize = 30
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
@@ -270,20 +270,37 @@ set completeopt+=noselect
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#unimported_packages = 1	
+"
+"
+" for bingo
+"let g:LanguageClient_rootMarkers = {
+        "\ 'go': ['.git', 'go.mod'],
+        "\ }
+
+"let g:LanguageClient_serverCommands = {
+    "\ 'go': ['bingo'],
+    "\ }
 
 " use tab cycle and close doc when select
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" indentLine
+ "indentLine
 let g:indentLine_enabled = 1
-let g:indentLine_concealcursor = 1
+"let g:indentLine_concealcursor = 1
 let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
-" indentLine
+ "indentLine
 "let g:indentLine_char = '▏'
 "let g:indentLine_color_gui = '#363949'
+
+" IndentLine {{
+"let g:indentLine_char = ''
+"let g:indentLine_first_char = ''
+"let g:indentLine_showFirstIndentLevel = 1
+"let g:indentLine_setColors = 1
+" }}
 
 " syntax toggle
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
@@ -390,18 +407,21 @@ let g:go_echo_commands_disabled = ['godef']
 
 " gometalinter configuration
 let g:go_metalinter_command = ""
-let g:go_metalinter_deadline = "5s"
-let g:go_metalinter_enabled = [
-    \ 'deadcode',
-    \ 'gas',
-    \ 'goconst',
-    \ 'gocyclo',
-    \ 'golint',
-    \ 'gosimple',
-    \ 'ineffassign',
-    \ 'vet',
-    \ 'vetshadow'
-\]
+let g:go_metalinter_deadline = "10s"
+"let g:go_metalinter_enabled = [
+    "\ 'deadcode',
+    "\ 'gas',
+    "\ 'goconst',
+    "\ 'gocyclo',
+    "\ 'golint',
+    "\ 'gosimple',
+    "\ 'ineffassign',
+    "\ 'vet',
+    "\ 'vetshadow'
+"\]
+"let g:go_metalinter_autosave = 1
+"let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+"let g:go_metalinter_enabled = [ 'errcheck']
 
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1

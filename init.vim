@@ -1,9 +1,12 @@
 "set nocompatible " not for nvim scince nvim always set nocompatible
-"set termguicolors " for neovim
-"set t_Co=256
 filetype off     " required
 
 syntax enable
+" Or if you have Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 " vim-plug ...
 if filereadable(expand("~/.config/nvim/plugs.vim"))
     source ~/.config/nvim/plugs.vim
@@ -51,10 +54,10 @@ set expandtab
 set scrolloff=3
 set ruler
 set laststatus=2
-let no_buffers_menu=1
+"let no_buffers_menu=1
 
 syntax on
-colorscheme desertEx
+colorscheme OceanicNext
 "colorscheme base16-onedark
 "set background=dark
 "colorscheme base16-tomorrow-night
@@ -196,8 +199,14 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 "" NERDTree configuration
-"let g:NERDTreeDirArrowExpandable = '▸'
-"let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+
+"let g:NERDTreeDirArrowExpandable = '▸ '
+"let g:NERDTreeDirArrowCollapsible = '▾ '
+"
+"let g:NERDTreeDirArrowExpandable = 'ﰂ' 
+"let g:NERDTreeDirArrowCollapsible = 'ﯰ'
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeIgnore = ['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder = ['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
@@ -215,14 +224,16 @@ nnoremap <silent> <F3> :NERDTreeToggle<CR>
 nnoremap <silent> <leader>ne :NERDTreeToggle<CR>
 
 
+
 "vim-airline
 "let g:airline_theme = 'desertink'
-"let g:airline_theme = 'papercolor'
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'papercolor'
+"let g:airline_theme = 'bubblegum'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#vimvirtual#enabled = 1
 let g:airline_skip_empty_sections = 1
 
 if !exists('g:airline_symbols')
@@ -238,6 +249,7 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+let g:airline_symbols.columnr = '' " not work
 
 " snippets
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -259,7 +271,7 @@ nmap <F5> :TagbarToggle<cr>
 nmap <leader>tb :TagbarToggle<cr>
 
 " deoplete
-let g:python_host_prog  = '/Users/i0040679/.pyenv/versions/neovim3/bin/python' " Path to python interpreter for neovim
+let g:python_host_prog  = '/Users/i0040679/.pyenv/versions/py3/bin/python' " Path to python interpreter for neovim
 let g:python3_host_skip_check = 1
 let g:deoplete#enable_at_startup = 1                " Run deoplete.nvim automatically
 
@@ -329,7 +341,6 @@ nmap <C-c><C-c> <Plug>NormalModeSendToTmux
 nmap <C-c>r <Plug>SetTmuxVars
 
 """ Python3 VirtualEnv
-let g:python3_host_prog = expand('/Users/i0040679/.pyenv/versions/neovim3/bin/python')
 let g:python2_host_prog = expand('/Users/i0040679/.pyenv/versions/neovim2/bin/python')
 
 "" easy motion"
@@ -426,6 +437,27 @@ let g:go_metalinter_deadline = "10s"
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
 
+"json 
+"autocmd FileType json syntax match Comment +\/\/.\+$+
+
 " user defined 
 nnoremap zz <esc>:wq<cr>
 :imap jj <esc>
+
+"vim.coc
+"inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
+"let g:coc_snippet_next = '<TAB>'
+"let g:coc_snippet_prev = '<S-TAB>'
+"
+" for lsp
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['/Users/i0040679/.pyenv/shims/pyls'],
+    \ 'go': ['/Users/i0040679/workspace/go/bin/gopls']
+    \ }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>

@@ -6,9 +6,16 @@ call plug#begin('~/.config/nvim/plugged')
 "" Basic plugs "
 " Functionalities
 "Plug 'Valloric/YouCompleteMe'
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'} " go support
+"Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'} " go support
+
+" LSP
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+"Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'SirVer/ultisnips'
 Plug 'easymotion/vim-easymotion'
 "Plug 'ervandew/supertab'
@@ -22,18 +29,16 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'Yggdroot/indentLine'
-Plug 'ternjs/tern_for_vim'
-Plug 'rust-lang/rust.vim'
+"Plug 'ternjs/tern_for_vim'
+"Plug 'rust-lang/rust.vim'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
-Plug 'pangloss/vim-javascript'
+"Plug 'pangloss/vim-javascript'
 Plug 'Shougo/denite.nvim'
-"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 "*************
 "" color themes
@@ -53,9 +58,12 @@ Plug 'aradunovic/perun.vim'
 Plug 'tomasr/molokai'
 Plug 'raphamorim/lucario'
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'mhartington/oceanic-next'
 
 " last one
-Plug 'ryanoasis/vim-devicons'
+"Plug 'ryanoasis/vim-devicons'
+Plug 'lujiacn/vim-devicons'
 call plug#end()
 
 "Plug 'daylerees/colour-schemes'

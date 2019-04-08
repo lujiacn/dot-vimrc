@@ -1,0 +1,15 @@
+{
+	// make vim select first item on completion
+	"suggest.noselect": false,
+	// when snippet activated and pumvisible, prefer complete completion.
+	"suggest.preferCompleteThanJumpPlaceholder": true,
+
+	"languageserver": {
+		"golang": {
+			"command": "bingo",
+			"args": ["--diagnostics-style=instant"],
+			"rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+			"filetypes": ["go"]
+		}
+	}
+}

@@ -6,15 +6,16 @@ call plug#begin('~/.config/nvim/plugged')
 "" Basic plugs "
 " Functionalities
 "Plug 'Valloric/YouCompleteMe'
-"Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'} " go support
-
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'} " go support
 " LSP
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
+"Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', { 'do': 'yarn install' }
+"Plug 'autozimu/LanguageClient-neovim', {
+    "\ 'branch': 'next',
+    "\ 'do': 'bash install.sh',
+    "\ }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
 "Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'SirVer/ultisnips'
 Plug 'easymotion/vim-easymotion'
@@ -23,14 +24,15 @@ Plug 'metalelf0/supertab' "fork for
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
+Plug 'liuchengxu/vista.vim' "replace tagbar
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'mileszs/ack.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/vim-easy-align'
 Plug 'Yggdroot/indentLine'
+Plug 'zxqfl/tabnine-vim' " replaced by coc tabnine plugin
 "Plug 'ternjs/tern_for_vim'
 "Plug 'rust-lang/rust.vim'
 Plug 'Quramy/vim-js-pretty-template'
@@ -40,11 +42,15 @@ Plug 'sheerun/vim-polyglot'
 "Plug 'pangloss/vim-javascript'
 Plug 'Shougo/denite.nvim'
 "Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+"
+Plug 'gabrielelana/vim-markdown'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 "*************
 "" color themes
 "*************
 Plug 'morhetz/gruvbox'
-Plug 'arcticicestudio/nord-vim'
+"Plug 'arcticicestudio/nord-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'toupeira/vim-desertink'
@@ -62,8 +68,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'mhartington/oceanic-next'
 
 " last one
-"Plug 'ryanoasis/vim-devicons'
-Plug 'lujiacn/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 "Plug 'daylerees/colour-schemes'

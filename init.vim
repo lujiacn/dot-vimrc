@@ -1,3 +1,11 @@
+" vscode or nvim
+if exists('g:vscode')
+    " VSCode extention
+else
+    " ordinary neovim
+endif
+"
+"
 "set nocompatible " not for nvim scince nvim always set nocompatible
 filetype off     " required
 
@@ -311,9 +319,12 @@ let g:syntastic_aggregate_errors = 1
 nmap <F5> :Vista!!<cr>
 nmap <leader>tb :Vista!!<cr>
 " deoplete
-let g:python_host_prog  = '/Users/i0040679/.pyenv/versions/py3/bin/python' " Path to python interpreter for neovim
-let g:python3_host_skip_check = 1
-let g:deoplete#enable_at_startup = 1                " Run deoplete.nvim automatically
+let g:python_host_prog='/Users/i0040679/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog='/Users/i0040679/.pyenv/versions/neovim3/bin/python'
+
+"let g:python3_host_prog  = '/usr/local/anaconda3/envs/neovim/bin/python3' " Path to python interpreter for neovim
+"let g:python3_host_skip_check = 1
+"let g:deoplete#enable_at_startup = 1                " Run deoplete.nvim automatically
 
 set completeopt+=noinsert
 set completeopt+=noselect
@@ -407,7 +418,7 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " user defined 
 nnoremap zz <esc>:wq<cr>
-:imap jj <esc>
+imap jj <esc>
 
 
 " for vim-devicons
@@ -562,3 +573,5 @@ set statusline+=%{NearestMethodOrFunction()}
 " you can add the following line to your vimrc 
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
+
+let g:ctrlp_prompt_mappings = { 'PrtExit()': ['<esc>', '<c-c>', '<c-j>']}

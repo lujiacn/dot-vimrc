@@ -10,10 +10,6 @@ Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'} " go support
 " LSP
 "Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install' }
-"Plug 'autozimu/LanguageClient-neovim', {
-    "\ 'branch': 'next',
-    "\ 'do': 'bash install.sh',
-    "\ }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
 "Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
@@ -39,12 +35,10 @@ Plug 'Quramy/vim-js-pretty-template'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
-"Plug 'pangloss/vim-javascript'
 Plug 'Shougo/denite.nvim'
-"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-"
 Plug 'gabrielelana/vim-markdown'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'mileszs/ack.vim'
 
 "*************
 "" color themes
@@ -66,6 +60,7 @@ Plug 'raphamorim/lucario'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'mhartington/oceanic-next'
+Plug 'tpope/vim-repeat'
 
 " last one
 Plug 'ryanoasis/vim-devicons'
